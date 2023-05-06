@@ -27,3 +27,17 @@ HMR is notoriously buggy and hard to get right. Rather than deal with that compl
 ```
 $ npx degit whaaaley/toolchain-vue
 ```
+
+## Pinned Dependencies
+
++ esbuild@0.14.54
++ stylelint@14.16.1
++ stylelint-config-clean-order@2.3.1
++ stylelint-config-standard-scss@6.1.0
+
+## Todo
+
++ Upgrade to esbuild@0.17.x
++ Upgrade to stylelint@15.x
++ Use esbuild's file server and watcher instead
++ Use Prettier for all formatting (stylelint v15 removed formatting)
