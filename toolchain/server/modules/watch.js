@@ -2,20 +2,6 @@
 import fs from 'node:fs'
 import path from 'node:path'
 
-// function debounce (handler, delay) {
-//   let timeout = null
-//
-//   return function (eventType, filename) {
-//     const later = function () {
-//       timeout = null
-//       handler(eventType, filename)
-//     }
-//
-//     clearTimeout(timeout)
-//     timeout = setTimeout(later, delay)
-//   }
-// }
-
 function throttle (handler, delay) {
   let last = 0
 

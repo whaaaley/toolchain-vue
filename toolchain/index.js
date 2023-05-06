@@ -18,16 +18,16 @@ async function build () {
   await writeFile('./deploy/public/index.html', spawnSync('node', { input }).stdout)
   console.log('🎉 Done Building!')
 
-  // Note: There's some weird thing going on with async functions and child
-  // processes. I don't really know what it's about, but everything is done so
-  // it's safe to exit.
+  // Note: There's something weird happening with async functions and child
+  // processes. I don't know what it's about, but everything is done so it's
+  // safe to exit.
   exit()
 }
 
 function start () {
   server({
     port: 3000,
-    extensions: ['.js', '.jsx', '.md', '.mdx', '.sass', '.scss', '.ts', '.tsx'],
+    extensions: ['.js', '.jsx', '.sass', '.scss', '.ts', '.tsx'],
     watchDir: 'src'
   })
 }

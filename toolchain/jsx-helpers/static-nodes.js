@@ -21,9 +21,8 @@ function joinChildren (children) {
   let target = ''
 
   /**
-   * -- Warning --
-   * This returns unescaped text in the document. You should protect against
-   * XSS before this point.
+   * This returns unescaped text in the document. If necessary you should
+   * protect against XSS before this point.
    */
 
   if (typeof children === 'string') {

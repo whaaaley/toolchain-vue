@@ -17,11 +17,13 @@ export default defineComponent({
           </div>
           <div class='flex gap-4'>
             <RouterLink to={{ name: 'Home' }}>Home</RouterLink>
+            <RouterLink to={{ name: 'Shop' }}>Shop</RouterLink>
             <RouterLink to={{ name: 'About' }}>About</RouterLink>
           </div>
         </div>
         <div class='flex justify-center items-center p-8'>
-          <div class='bg-slate-700 p-4 rounded-lg w-tablet'>
+          {/* <div class='bg-slate-700 p-4 rounded-lg w-tablet'> */}
+          <div>
             <h1 class='font-medium text-xl'>{route.name}</h1>
             <RouterView/>
           </div>

@@ -8,19 +8,19 @@ async function handler (args, options) {
   const css = await fs.readFile(args.path, 'utf8')
 
   const plugins = [
-    tailwind(options),
+    tailwind(options.config),
     autoprefixer
   ]
 
   const result = await postcss(plugins).process(css, {
     from: args.path,
     map: {
-      inline: true
+      inline: options.inlineSourcemap ?? false
     }
   })
 
   return {
-    loader: 'text',
+    loader: options.loader ?? 'css',
     contents: result.css
   }
 }

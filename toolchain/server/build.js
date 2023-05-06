@@ -1,6 +1,6 @@
 
-import fs from 'fs'
-import { spawn } from 'child_process'
+import fs from 'node:fs'
+import { spawn } from 'node:child_process'
 import esbuild from 'esbuild'
 import { info } from './modules/log.js'
 import { reload } from './reload.js'

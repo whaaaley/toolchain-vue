@@ -15,29 +15,25 @@ const strokeAttr = /stroke=".*?"/
 
 const options = {
   multipass: true,
-  plugins: [
-    {
-      name: 'removeAttrs',
-      params: {
-        attrs: [
-          'svg:class',
-          'svg:width',
-          'svg:height'
-        ]
-      }
-    },
-    {
-      name: 'removeUselessStrokeAndFill',
-      params: {
-        stroke: true,
-        fill: true,
-        removeNone: true
-      }
-    },
-    {
-      name: 'removeDesc'
+  plugins: [{
+    name: 'removeAttrs',
+    params: {
+      attrs: [
+        'svg:class',
+        'svg:width',
+        'svg:height'
+      ]
     }
-  ]
+  }, {
+    name: 'removeUselessStrokeAndFill',
+    params: {
+      stroke: true,
+      fill: true,
+      removeNone: true
+    }
+  }, {
+    name: 'removeDesc'
+  }]
 }
 
 export default {

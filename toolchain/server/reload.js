@@ -1,5 +1,5 @@
 
-import crypto from 'crypto'
+import crypto from 'node:crypto'
 import * as log from './modules/log.js'
 
 const clients = new Map()

@@ -33,6 +33,10 @@ const router = createRouter({
       path: '/home',
       component: () => import('./views/Home.jsx')
     }, {
+      name: 'Shop',
+      path: '/shop',
+      component: () => import('./views/Shop.jsx')
+    }, {
       name: 'About',
       path: '/about',
       component: () => import('./views/About.jsx')

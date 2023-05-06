@@ -20,10 +20,10 @@ function Page (props) {
     <body>
       <noscript>Please enable JavaScript and try again.</noscript>
       <div id='app'></div>
-      <script type='module'>{'<!-- boundary -->' + script}</script>
-      <style>{'<!-- boundary -->' + style}</style>
-      <style>{'<!-- boundary -->' + tailwind}</style>
-      <style>{'<!-- boundary -->' + fonts}</style>
+      <script type='module'>{'<!-- static -->' + script}</script>
+      <style>{'<!-- static -->' + style}</style>
+      <style>{'<!-- static -->' + tailwind}</style>
+      <style>{'<!-- static -->' + fonts}</style>
     </body>
   </html>
 }

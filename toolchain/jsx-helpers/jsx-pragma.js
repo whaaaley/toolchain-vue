@@ -1,7 +1,7 @@
 
 import { staticNode, staticText } from './static-nodes.js'
 
-const marker = '<!-- boundary -->'
+const marker = '<!-- static -->'
 const EMPTY_OBJ = Object.freeze({})
 
 export function jsxStatic (type, props, ...children) {

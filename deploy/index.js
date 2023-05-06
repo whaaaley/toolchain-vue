@@ -14,7 +14,9 @@ serve(req => {
     if (ext === '') {
       return new Response(indexFile, {
         status: 200,
-        headers: { 'content-type': 'text/html' }
+        headers: {
+          'content-type': 'text/html'
+        }
       })
     } else {
       return serveDir(req, { fsRoot: dist })

@@ -13,7 +13,7 @@ import tabler from './sass-functions/tabler.js'
 
 import tailwindConfig from './tailwind.config.js'
 
-const production = process.env.NODE_ENV === 'production'
+const DEV = process.env.NODE_ENV === 'development'
 
 const sassPluginOptions = {
   sass: {
@@ -33,14 +33,14 @@ const sassPluginOptions = {
 const javascriptPluginOptions = {
   esbuild: {
     bundle: true,
-    write: false,
-    incremental: !production,
-    sourcemap: production ? false : 'inline',
     format: 'esm',
+    incremental: DEV,
     outdir: './deploy/public/',
+    sourcemap: DEV ? 'inline' : false,
     splitting: true,
+    write: false,
     define: {
-      'process.env.NODE_ENV': JSON.stringify(production ? 'production' : 'development'),
+      'import.meta.env.DEV': JSON.stringify(DEV),
       '__VUE_OPTIONS_API__': true,
       '__VUE_PROD_DEVTOOLS__': false
     },
@@ -48,17 +48,15 @@ const javascriptPluginOptions = {
       './toolchain/jsx-helpers/jsx-pragma.js'
     ],
     plugins: [
+      sass(sassPluginOptions),
       resolve({
         loadpaths: [
           path.join(process.cwd(), './src')
         ]
       }),
-      sass({
-        ...sassPluginOptions
-      }),
       babel({
         plugins: [
-          '@vue/babel-plugin-jsx'
+          ['@vue/babel-plugin-jsx', { optimize: true }]
         ]
       })
     ]
@@ -88,7 +86,7 @@ const javascriptPluginOptions = {
 export default {
   main: {
     bundle: true,
-    incremental: !production,
+    incremental: DEV,
     jsxFactory: 'jsxStatic',
     jsxFragment: 'jsxFragment',
     platform: 'node',
@@ -103,13 +101,13 @@ export default {
       '.bundle.jsx': 'text'
     },
     plugins: [
-      javascript({
-        ...javascriptPluginOptions
-      }),
-      sass({
-        ...sassPluginOptions
-      }),
-      tailwind(tailwindConfig)
+      sass(sassPluginOptions),
+      javascript(javascriptPluginOptions),
+      tailwind({
+        config: tailwindConfig,
+        inlineSourcemap: true,
+        loader: 'text'
+      })
     ]
   }
 }
