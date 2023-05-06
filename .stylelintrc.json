@@ -1,0 +1,27 @@
+{
+  "extends": [
+    "stylelint-config-standard-scss",
+    "stylelint-config-clean-order"
+  ],
+  "rules": {
+    "no-empty-first-line": null,
+    "selector-class-pattern": null,
+    "selector-list-comma-newline-after": null,
+    "at-rule-empty-line-before": [
+      "always",
+      {
+        "except": [
+          "blockless-after-blockless",
+          "first-nested"
+        ],
+        "ignore": [
+          "after-comment",
+          "inside-block"
+        ]
+      }
+    ],
+    "order/properties-order": {
+      "emptyLineMinimumPropertyThreshold": 99
+    }
+  }
+}
