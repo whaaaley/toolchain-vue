@@ -29,7 +29,7 @@ function Page (props) {
 }
 
 const html = Page({
-  title: 'Toolchain',
+  title: 'Vue Toolchain',
   author: '',
   description: 'A toolchain for building web apps with Vue.',
   viewport: 'width=device-width,maximum-scale=5'

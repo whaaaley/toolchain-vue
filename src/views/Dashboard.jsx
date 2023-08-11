@@ -24,7 +24,7 @@ export default defineComponent({
         <div class='flex justify-center items-center p-8'>
           {/* <div class='bg-slate-700 p-4 rounded-lg w-tablet'> */}
           <div>
-            <h1 class='font-medium text-xl'>{route.name}</h1>
+            {/* <h1 class='font-medium text-xl'>{route.name}</h1> */}
             <RouterView/>
           </div>
         </div>

@@ -55,6 +55,7 @@ const javascriptPluginOptions = {
         ]
       }),
       babel({
+        sourceMaps: DEV ? 'inline' : false,
         plugins: [
           ['@vue/babel-plugin-jsx', { optimize: true }]
         ]

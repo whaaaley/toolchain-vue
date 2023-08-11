@@ -1,7 +1,7 @@
 
 const source = new EventSource('/reload')
 
-source.onmessage = function (body) {
+source.onmessage = body => {
   switch (body.data) {
     case 'connect':
       console.log('Connected to automatic reload')

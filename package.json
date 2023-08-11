@@ -12,7 +12,8 @@
     "prepare": "rm -rf deploy/public && mkdir deploy/public",
     "build": "npm run prepare && NODE_ENV=production node toolchain build",
     "start": "npm run prepare && NODE_ENV=development node toolchain start",
-    "deno": "npm run build && deno run -A deploy/index.js"
+    "deno": "npm run build && deno run -A deploy/index.js",
+    "test": "vitest"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.21.0",
@@ -28,6 +29,7 @@
     "@tabler/icons": "^2.17.0",
     "@vue/babel-plugin-jsx": "^1.1.1",
     "autoprefixer": "^10.4.14",
+    "change-case": "^4.1.2",
     "clean-css": "^5.3.2",
     "culori": "^3.1.0",
     "esbuild": "0.14.54",
@@ -40,7 +42,8 @@
     "tailwindcss": "^3.3.2",
     "typescript": "^5.0.4",
     "uglify-js": "^3.17.4",
-    "unplugin-auto-import": "^0.15.3"
+    "unplugin-auto-import": "^0.15.3",
+    "vitest": "^0.34.1"
   },
   "optionalDependencies": {
     "eslint": "^8.40.0",

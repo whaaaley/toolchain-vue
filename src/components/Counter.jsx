@@ -15,14 +15,22 @@ export default defineComponent({
 
     const plus = () => {
       data.count++
-      console.log('hello')
+    }
+
+    const reload = () => {
+      location.reload()
     }
 
     return () => {
-      return <div class='flex gap-4'>
-        <button onClick={minus}>Minus</button>
-        <div>{data.count}</div>
-        <button onClick={plus}>Plus</button>
+      return <div class='flex'>
+        <div class='flex gap-4 bg-slate-900 p-3 rounded-lg'>
+          <button class='bg-vt-green px-4 py-2 rounded-md' onClick={minus}>
+            <div class='bg-icon-PencilIcon-white w-10 h-10'>_</div>
+          </button>
+          <div class='text-3xl'>{data.count}</div>
+          <button class='bg-vt-green px-4 py-2 rounded-md' onClick={plus}>Plus</button>
+          <button class='bg-vt-green px-4 py-2 rounded-md' onClick={reload}>Reload</button>
+        </div>
       </div>
     }
   }
