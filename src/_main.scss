@@ -1,4 +1,23 @@
 
-.tabler-alien {
-  background: tabler("alien", 2, #fff) center left 12px / 24px no-repeat;
+html {
+  all: initial;
+}
+
+* {
+  color: inherit;
+  font: inherit;
+  box-sizing: inherit;
+}
+
+body {
+  font: 16px/1 Inter, sans-serif;
+  box-sizing: border-box;
+}
+
+.icon-arrow-right {
+  background: tabler("arrow-right", 2, #fff) center right 12px / 24px no-repeat;
+}
+
+.icon-copy {
+  background: tabler("copy", 2, #fff) center left 12px / 24px no-repeat;
 }
