@@ -30,7 +30,7 @@ const options = {
   }]
 }
 
-export const getIconTemplate = name => {
+export const getIcon = name => {
   const pathname = path.join(svgPath, name + '.svg')
   let template = cache.get(pathname)
 

@@ -1,6 +1,6 @@
 
 import sass from 'sass'
-import { getIconTemplate } from '../lib/tabler-icons.js'
+import { getIcon } from '../lib/tabler-icons.js'
 
 export default {
   'tabler($name, $width, $color)': ([name, width, color]) => {
@@ -8,7 +8,7 @@ export default {
     width = width.assertNumber('width').value
     color = color.assertColor('color').toString()
 
-    const template = getIconTemplate(name)
+    const template = getIcon(name)
 
     return new sass.SassString(template(width, color), {
       quotes: false
