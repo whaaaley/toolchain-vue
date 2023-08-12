@@ -2,6 +2,16 @@
 import { defineComponent } from 'vue'
 import { reactive } from '~/helpers/persist.js'
 
+const Btn = (props, { slots }) => {
+  return <button class='bg-vt-blue px-3 rounded-md'>
+    {slots.default()}
+  </button>
+}
+
+const Icon = props => {
+  return <div class='w-6 h-6'></div>
+}
+
 export default defineComponent({
   name: 'Counter',
   setup () {
@@ -23,13 +33,15 @@ export default defineComponent({
 
     return () => {
       return <div class='flex'>
-        <div class='flex gap-4 bg-slate-900 p-3 rounded-lg'>
-          <button class='bg-vt-green px-4 py-2 rounded-md' onClick={minus}>
-            <div class='bg-icon-PencilIcon-white w-10 h-10'>_</div>
-          </button>
+        <div class='flex gap-4 bg-slate-800 p-3 rounded-lg'>
+          <Btn onClick={minus}>
+            <Icon class='bg-circle-minus'/>
+          </Btn>
           <div class='text-3xl'>{data.count}</div>
-          <button class='bg-vt-green px-4 py-2 rounded-md' onClick={plus}>Plus</button>
-          <button class='bg-vt-green px-4 py-2 rounded-md' onClick={reload}>Reload</button>
+          <Btn onClick={plus}>
+            <Icon class='bg-circle-plus'/>
+          </Btn>
+          <Btn onClick={reload}>Reload</Btn>
         </div>
       </div>
     }

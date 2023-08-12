@@ -1,32 +1,24 @@
 
 import { defineComponent } from 'vue'
-import { useRoute, RouterView, RouterLink } from 'vue-router'
+import { RouterView, RouterLink } from 'vue-router'
 
 export default defineComponent({
   name: 'Dashboard',
   setup () {
-    const route = useRoute()
-
     return () => {
-      return <div class='bg-slate-800 text-white h-screen'>
-        <div class='bg-slate-700 h-14 flex items-center justify-between px-4'>
+      return <div class='bg-slate-900 text-white'>
+        <div class='h-16 flex items-center justify-between px-4 border-b-slate-800 border-b-2'>
           <div>
-            <div class='font-medium text-xl'>
-              Toolchain
-            </div>
+            <div class='font-medium text-xl'>Vue / esbuild</div>
           </div>
-          <div class='flex gap-4'>
+          <div class='flex gap-4 text-body'>
             <RouterLink to={{ name: 'Home' }}>Home</RouterLink>
             <RouterLink to={{ name: 'Shop' }}>Shop</RouterLink>
             <RouterLink to={{ name: 'About' }}>About</RouterLink>
           </div>
         </div>
-        <div class='flex justify-center items-center p-8'>
-          {/* <div class='bg-slate-700 p-4 rounded-lg w-tablet'> */}
-          <div>
-            {/* <h1 class='font-medium text-xl'>{route.name}</h1> */}
-            <RouterView/>
-          </div>
+        <div>
+          <RouterView/>
         </div>
       </div>
     }
