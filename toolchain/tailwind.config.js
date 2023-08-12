@@ -1,13 +1,12 @@
 
-import plugin from 'tailwindcss/plugin.js'
-import { tablerIcons } from './tailwind-plugins/tabler-icons.js'
+import { getIcon } from './lib/tabler-icons.js'
 
 const linearClamp = (min, max) => {
   min = min / 16
   max = max / 16
 
   const minWidth = 425 / 16 // minimum width of mobile
-  const maxWidth = 768 / 16 // maximum width of laptop
+  const maxWidth = 1024 / 16 // maximum width of laptop
 
   const slope = (max - min) / (maxWidth - minWidth)
   const intercept = min - slope * minWidth
@@ -17,9 +16,7 @@ const linearClamp = (min, max) => {
 }
 
 export default {
-  plugins: [
-    plugin(tablerIcons())
-  ],
+  plugins: [],
   content: [
     './index.html',
     './src/**/*.{css,scss,js,jsx,ts,tsx}'
@@ -55,6 +52,12 @@ export default {
         'vt-purple-dark': 'var(--vt-c-purple-dark)',
         'vt-purple-darker': 'var(--vt-c-purple-darker)'
       },
+      backgroundImage: {
+        'alien-black': getIcon('alien')(1, '#000'),
+        'arrow-right': getIcon('arrow-right')(2, '#fff'),
+        'circle-minus': getIcon('circle-minus')(2, '#fff'),
+        'circle-plus': getIcon('circle-plus')(2, '#fff')
+      },
       border: {
         '1': '1px'
       },
@@ -71,14 +74,25 @@ export default {
         '3': '3 1 0%'
       },
       fontFamily: {
-        elza: ['DIN', 'sans-serif'],
-        roboto: ['Inter', 'sans-serif']
+        din: ['DIN', 'sans-serif'],
+        inter: ['Inter', 'sans-serif'],
+        mono: ['Source Code Pro', 'sans-serif']
+      },
+      fontSize: {
+        'hero': linearClamp(30, 72),
+        'tagline': linearClamp(18, 30),
+        'body': linearClamp(16, 18)
       },
       boxShadow: {
       },
       height: {
       },
       maxHeight: {
+      },
+      spacing: {
+        'linear-sm': linearClamp(16, 48),
+        'linear-md': linearClamp(16, 96),
+        'linear-lg': linearClamp(16, 144)
       },
       strokeWidth: {
       },
